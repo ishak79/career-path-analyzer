@@ -1,5 +1,5 @@
 Career Path Analyzer  
-A simple full-stack web application that performs skill-gap analysis, generates a role-based career roadmap and displays the latest tech news using the public HackerNews API.
+A simple full-stack web application that performs skill-gap analysis, generates a role-based career roadmap, and displays the latest tech news using the public HackerNews API.
 
 This project has two parts:
 Backend: Node.js + Express  
@@ -9,6 +9,21 @@ Live Demo
 Frontend (Vercel): https://career-path-analyzer-pi.vercel.app  
 Backend (Render): https://career-path-backend-ewj2.onrender.com  
 
+Tech Stack Used  
+Frontend
+- React (Vite)
+- Axios (API calls)
+- CSS (basic styling)
+
+Backend
+- Node.js  
+- Express  
+- Axios (for calling HackerNews API)  
+- CORS  
+
+Deployment
+- Frontend: Vercel  
+- Backend: Render 
 
 📂 Project Structure
 fullstack-career-app/
@@ -21,6 +36,7 @@ fullstack-career-app/
 
 
 How to Run the Project Locally
+
 1. Run the Backend
 cd backend
 npm install
@@ -78,7 +94,6 @@ Request Body
 {
   "targetRole": "Backend Developer"
 }
-
 Sample Response
 {
   "targetRole": "Backend Developer",
