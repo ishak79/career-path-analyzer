@@ -12,7 +12,7 @@ const ROLE_SKILLS = {
   "Data Analyst": ["Excel", "SQL", "Python", "Dashboards", "Statistics"],
 };
 
-// Roadmap for each role (simple mock "AI" roadmap)
+
 const ROLE_ROADMAP = {
   "Backend Developer": [
     {
