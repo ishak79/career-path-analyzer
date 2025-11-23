@@ -1,39 +1,46 @@
+
 # Career Path Analyzer
 
-A simple full-stack web application that performs **skill-gap analysis**, generates a **role-based career roadmap**, and displays **latest tech news** using the public HackerNews API.
+A simple full-stack web application that performs skill-gap analysis, generates a role-based career roadmap and displays the latest tech news using the public HackerNews API.
 
----
+## Project Overview
 
-## 🚀 Live Demo
+This project is a full-stack application composed of two main parts:
 
-**Frontend (Vercel):**  
-https://career-path-analyzer-pi.vercel.app  
+*   **Backend:** Node.js + Express
+*   **Frontend:** React (Vite)
 
-**Backend (Render):**  
-https://career-path-backend-ewj2.onrender.com  
+## Live Demo
 
----
+| Component | Platform | URL |
+| :--- | :--- | :--- |
+| Frontend | Vercel | [https://career-path-analyzer-pi.vercel.app](https://career-path-analyzer-pi.vercel.app) |
+| Backend | Render | [https://career-path-backend-ewj2.onrender.com](https://career-path-backend-ewj2.onrender.com) |
 
-## 🛠️ Tech Stack Used
+## Tech Stack
 
-### 🔹 Frontend
-- React (Vite)
-- Axios (API calls)
-- CSS (basic styling)
+### Frontend
 
-### 🔹 Backend
-- Node.js
-- Express
-- Axios (for calling HackerNews API)
-- CORS
+*   React (Vite)
+*   Axios (API calls)
+*   CSS (basic styling)
 
-### 🔹 Deployment
-- Frontend → **Vercel**
-- Backend → **Render**
+### Backend
 
----
+*   Node.js
+*   Express
+*   Axios (for calling HackerNews API)
+*   CORS
 
-## 📂 Project Structure
+### Deployment
+
+*   Frontend: Vercel
+*   Backend: Render
+
+## Project Structure
+
+```
+
 fullstack-career-app/
 │
 ├── backend/ → Node.js + Express APIs
@@ -42,116 +49,37 @@ fullstack-career-app/
 └── frontend/ → React UI (Vite)
 └── src/
 
+```` 
 
----
+## How to Run Locally
 
-## 💻 How to Run the Project Locally
+### 1. Run the Backend
 
-### 1️⃣ Run the Backend
 ```bash
 cd backend
 npm install
 npm run dev
 
-Backend runs at:
-http://localhost:5000
+````
 
-2️⃣ Run the Frontend
+Backend runs at: `http://localhost:5000`
+
+### 2\. Run the Frontend
+
+``` bash
 cd frontend
 npm install
 npm run dev
 
-Frontend runs at:
-http://localhost:5173
+```
 
+Frontend runs at: `http://localhost:5173`
 
+## API ENDPOINTS
 
-📘 API Documentation
-
-1. POST /api/skill-gap
-
-Finds:
-
-matched skills
-
-missing skills
-
-recommendations
-
-suggested learning order
-
-
-Request Body
-{
-  "targetRole": "Backend Developer",
-  "currentSkills": "Java, SQL, Git"
-}
-
-Sample Response
-{
-  "targetRole": "Backend Developer",
-  "matchedSkills": ["Java", "SQL", "Git"],
-  "missingSkills": ["Spring Boot", "APIs"],
-  "recommendations": [
-    "You should focus on learning: Spring Boot, APIs.",
-    "Keep practicing: Java, SQL, Git with small real-world projects."
-  ],
-  "suggestedLearningOrder": [
-    "Java",
-    "SQL",
-    "Git",
-    "Spring Boot",
-    "APIs"
-  ]
-}
-
-
-2. POST /api/roadmap
-
-Generates a 3-phase roadmap for the selected role.
-
-Request Body
-{
-  "targetRole": "Backend Developer"
-}
-
-Sample Response
-{
-  "targetRole": "Backend Developer",
-  "phases": [
-    {
-      "phase": "Phase 1 (1–2 months)",
-      "items": ["Java basics", "OOP concepts", "Git basics"]
-    },
-    {
-      "phase": "Phase 2 (2 months)",
-      "items": ["Spring Boot", "SQL practice", "Build REST APIs"]
-    },
-    {
-      "phase": "Phase 3 (1–2 months)",
-      "items": ["Deployment basics", "2–3 projects", "System design basics"]
-    }
-  ]
-}
-
-
-3. GET /api/news
-
-Fetches top 5 latest HackerNews stories.
-
-Sample Response
-{
-  "stories": [
-    {
-      "id": 123,
-      "title": "Business Story",
-      "url": "https://business.com",
-      "score": 120,
-      "time": 1690000000,
-      "type": "story",
-      "by": "authorname"
-    }
-  ]
-}
-
+| Endpoint             | Method | Purpose                                                                                                 | Request Body                                                                    | Sample Response                                                                                                      |
+| :------------------- | :----- | :------------------------------------------------------------------------------------------------------ | :------------------------------------------------------------------------------ | :------------------------------------------------------------------------------------------------------------------- |
+| **`/api/skill-gap`** | `POST` | Calculates matched skills, missing skills, recommendations, and learning order for a given role.        | `json { "targetRole": "Backend Developer", "currentSkills": "Java, SQL, Git" }` | `json { "matchedSkills": [...], "missingSkills": [...], "recommendations": [...], "suggestedLearningOrder": [...] }` |
+| **`/api/roadmap`**   | `POST` | Returns a phase-wise career roadmap for a selected role. If role is unknown, returns a generic roadmap. | `json { "targetRole": "Backend Developer" }`                                    | `json { "targetRole": "...", "phases": [ { "phase": "Phase 1", "items": [...] }, ... ] }`                            |
+| **`/api/news`**      | `GET`  | Fetches top 5 trending tech news stories from HackerNews.                                               | **None**                                                                        | `json { "stories": [ { "id": 123, "title": "...", "url": "...", "score": 100, "by": "user" } ] }`                    |
 
