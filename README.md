@@ -1,31 +1,39 @@
-Career Path Analyzer  
-A simple full-stack web application that performs skill-gap analysis, generates a role-based career roadmap, and displays the latest tech news using the public HackerNews API.
+# Career Path Analyzer
 
-This project has two parts:
-Backend: Node.js + Express  
-Frontend: React (Vite)
+A simple full-stack web application that performs **skill-gap analysis**, generates a **role-based career roadmap**, and displays **latest tech news** using the public HackerNews API.
 
-Live Demo  
-Frontend (Vercel): https://career-path-analyzer-pi.vercel.app  
-Backend (Render): https://career-path-backend-ewj2.onrender.com  
+---
 
-Tech Stack Used  
-Frontend
+## 🚀 Live Demo
+
+**Frontend (Vercel):**  
+https://career-path-analyzer-pi.vercel.app  
+
+**Backend (Render):**  
+https://career-path-backend-ewj2.onrender.com  
+
+---
+
+## 🛠️ Tech Stack Used
+
+### 🔹 Frontend
 - React (Vite)
 - Axios (API calls)
 - CSS (basic styling)
 
-Backend
-- Node.js  
-- Express  
-- Axios (for calling HackerNews API)  
-- CORS  
+### 🔹 Backend
+- Node.js
+- Express
+- Axios (for calling HackerNews API)
+- CORS
 
-Deployment
-- Frontend: Vercel  
-- Backend: Render 
+### 🔹 Deployment
+- Frontend → **Vercel**
+- Backend → **Render**
 
-📂 Project Structure
+---
+
+## 📂 Project Structure
 fullstack-career-app/
 │
 ├── backend/ → Node.js + Express APIs
@@ -35,34 +43,45 @@ fullstack-career-app/
 └── src/
 
 
-How to Run the Project Locally
+---
 
-1. Run the Backend
+## 💻 How to Run the Project Locally
+
+### 1️⃣ Run the Backend
+```bash
 cd backend
 npm install
 npm run dev
 
-Backend runs at:  
+Backend runs at:
 http://localhost:5000
 
-2,Run the Frontend
+2️⃣ Run the Frontend
 cd frontend
 npm install
 npm run dev
 
-Frontend runs at:  
+Frontend runs at:
 http://localhost:5173
 
-API Documentation 
+
+
+📘 API Documentation
+
 1. POST /api/skill-gap
-Identifies:
-- matched skills  
-- missing skills  
-- recommendations  
-- suggested learning order  
+
+Finds:
+
+matched skills
+
+missing skills
+
+recommendations
+
+suggested learning order
+
 
 Request Body
-json
 {
   "targetRole": "Backend Developer",
   "currentSkills": "Java, SQL, Git"
@@ -88,12 +107,14 @@ Sample Response
 
 
 2. POST /api/roadmap
-Returns a 3-phase roadmap based on target role.
+
+Generates a 3-phase roadmap for the selected role.
 
 Request Body
 {
   "targetRole": "Backend Developer"
 }
+
 Sample Response
 {
   "targetRole": "Backend Developer",
@@ -113,16 +134,18 @@ Sample Response
   ]
 }
 
+
 3. GET /api/news
-Fetches the top 5 latest HackerNews stories.
+
+Fetches top 5 latest HackerNews stories.
 
 Sample Response
 {
   "stories": [
     {
       "id": 123,
-      "title": "Bussiness Story",
-      "url": "https://bussiness.com",
+      "title": "Business Story",
+      "url": "https://business.com",
       "score": 120,
       "time": 1690000000,
       "type": "story",
@@ -130,8 +153,5 @@ Sample Response
     }
   ]
 }
-
-
-
 
 
